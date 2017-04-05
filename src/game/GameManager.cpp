@@ -572,6 +572,10 @@ void GameManager::updateCollider() {
     for (auto& m : weaponDropManager) {
         collisionHandler.quadtreePickUp.insert(&m.second);
     }
+
+    for (auto& s : storeManager) {
+        collisionHandler.quadtreeStore.insert(s.second.get());
+    }
 }
 
 /**
@@ -642,10 +646,6 @@ void GameManager::handleAttackAction(const AttackAction& attackAction) {
             marine.first.setPosition(curX, curY);
             marine.first.setAngle(curAngle);
         }
-    }
-
-    for (auto& s : storeManager) {
-        collisionHandler.quadtreeStore.insert(s.second.get());
     }
 }
 
@@ -742,4 +742,3 @@ void GameManager::setBoundary(const float startX, const float startY, const floa
     createWall(eX, sY, width, height / 1.5);
     createWall(eX, sY + (height / 4 * 3), width, height / 4);
 }
-
