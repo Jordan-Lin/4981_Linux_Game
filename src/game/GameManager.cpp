@@ -23,10 +23,26 @@ int32_t GameManager::generateID() {
     return ++counter;
 }
 
-GameManager::GameManager():collisionHandler(){
+/**
+ * Date: Feb. 4, 2017
+ * Modified: ----
+ * Author: Jacob McPhail
+ * Function Interface: GameManager()
+ * Description:
+ *     ctor for the game manager.
+ */
+GameManager::GameManager():collisionHandler() {
     logv("Create GM\n");
 }
 
+/**
+ * Date: Feb. 4, 2017
+ * Modified: ----
+ * Author: Jacob McPhail
+ * Function Interface: ~GameManager()
+ * Description:
+ *     dctor for the game manager.
+ */
 GameManager::~GameManager() {
     logv("Destroy GM\n");
 }
